@@ -4,3 +4,129 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+/* Utilities */
+.d-flex {
+    display: flex;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 940px;
+    width: 90%;
+    padding: 3rem 0rem;
+}
+
+.row {
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin: 0 -0.8rem;
+}
+
+.col-lg-1 {
+    width: calc(100% / 12 * 1);
+}
+
+.col-lg-2 {
+    width: calc(100% / 12 * 2);
+}
+
+.col-lg-3 {
+    width: calc(100% / 12 * 3);
+}
+
+.col-lg-4 {
+    padding: 0.8rem;
+    width: calc(100% / 12 * 4);
+}
+
+.col-lg-5 {
+    width: calc(100% / 12 * 5);
+}
+
+.col-lg-6 {
+    width: calc(100% / 12 * 6);
+}
+
+.col-lg-7 {
+    width: calc(100% / 12 * 7);
+}
+
+.col-lg-8 {
+    width: calc(100% / 12 * 8);
+}
+
+.col-lg-9 {
+    width: calc(100% / 12 * 9);
+}
+
+.col-lg-10 {
+    width: calc(100% / 12 * 10);
+}
+
+.col-lg-11 {
+    width: calc(100% / 12 * 11);
+}
+
+.col-lg-12 {
+    width: calc(100% / 12 * 12);
+}
+
+/* Generics */
+body {
+    background-image: url('../img/cork.png');
+    background-repeat: repeat;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+
+/* Header */
+.main-header {
+    justify-content: center;
+    align-items: center;
+    min-height: 150px;
+    background-image: url('../img/wall.png');
+    background-repeat: repeat-x;
+    background-size: 400px;
+
+    h1 {
+        font-family: "Edu TAS Beginner", cursive;
+        font-weight: 800;
+        font-size: 6rem;
+    }
+}
+
+/* Card */
+.card {
+    width: 100%;
+    height: 360px;
+    padding: 15px;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+
+    .card-pin {
+        scale: 0.8;
+        position: absolute;
+        margin-top: -25px;
+    }
+
+    .card-image {
+        img {
+            height: 250px;
+            object-fit: cover;
+        }
+    }
+
+    .card-description {
+        padding: 15px 0;
+
+        span {
+            font-family: "Edu TAS Beginner", cursive;
+        }
+    }
+}
