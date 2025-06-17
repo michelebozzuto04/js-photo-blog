@@ -7,7 +7,7 @@ fetch('https://lanciweb.github.io/demo/api/pictures/')
         renderString = ``;
         data.forEach(element => {
             console.log(element)
-            renderString += `<div class="col-lg-4"><div class="card d-flex">
+            renderString += `<div class="col-lg-4 col-md-6 col-sm-12"><div class="card d-flex">
                         <div class="card-pin">
                             <img src="./assets/img/pin.svg" alt="">
                         </div>

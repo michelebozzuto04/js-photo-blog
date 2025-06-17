@@ -12,7 +12,7 @@
 
 .container {
     margin: 0 auto;
-    max-width: 940px;
+    max-width: 992px;
     width: 90%;
     padding: 3rem 0rem;
 }
@@ -88,22 +88,25 @@ img {
 .main-header {
     justify-content: center;
     align-items: center;
-    min-height: 150px;
+    height: 150px;
     background-image: url('../img/wall.png');
     background-repeat: repeat-x;
     background-size: 400px;
 
     h1 {
         font-family: "Edu TAS Beginner", cursive;
-        font-weight: 600;
-        font-size: 6rem;
+        font-weight: 700;
+        font-size: 4.4rem;
+
+        @media screen and (max-width: 380px) {
+            font-size: 3.6rem;
+        }
     }
 }
 
 /* Card */
 .card {
     width: 100%;
-    min-height: 360px;
     padding: 15px;
     background-color: white;
     flex-direction: column;
@@ -129,5 +132,120 @@ img {
         span {
             font-family: "Edu TAS Beginner", cursive;
         }
+    }
+}
+
+
+
+/* Responsive Rules */
+@media screen and (max-width: 992px) {
+
+    .container {
+        max-width: 620px;
+    }
+
+    .col-md-1 {
+        width: calc(100% / 12 * 1);
+    }
+
+    .col-md-2 {
+        width: calc(100% / 12 * 2);
+    }
+
+    .col-md-3 {
+        width: calc(100% / 12 * 3);
+    }
+
+    .col-md-4 {
+        padding: 0.8rem;
+        width: calc(100% / 12 * 4);
+    }
+
+    .col-md-5 {
+        width: calc(100% / 12 * 5);
+    }
+
+    .col-md-6 {
+        width: calc(100% / 12 * 6);
+    }
+
+    .col-md-7 {
+        width: calc(100% / 12 * 7);
+    }
+
+    .col-md-8 {
+        width: calc(100% / 12 * 8);
+    }
+
+    .col-md-9 {
+        width: calc(100% / 12 * 9);
+    }
+
+    .col-md-10 {
+        width: calc(100% / 12 * 10);
+    }
+
+    .col-md-11 {
+        width: calc(100% / 12 * 11);
+    }
+
+    .col-md-12 {
+        width: calc(100% / 12 * 12);
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    .container {
+        max-width: 300px;
+    }
+
+    .col-sm-1 {
+        width: calc(100% / 12 * 1);
+    }
+
+    .col-sm-2 {
+        width: calc(100% / 12 * 2);
+    }
+
+    .col-sm-3 {
+        width: calc(100% / 12 * 3);
+    }
+
+    .col-sm-4 {
+        padding: 0.8rem;
+        width: calc(100% / 12 * 4);
+    }
+
+    .col-sm-5 {
+        width: calc(100% / 12 * 5);
+    }
+
+    .col-sm-6 {
+        width: calc(100% / 12 * 6);
+    }
+
+    .col-sm-7 {
+        width: calc(100% / 12 * 7);
+    }
+
+    .col-sm-8 {
+        width: calc(100% / 12 * 8);
+    }
+
+    .col-sm-9 {
+        width: calc(100% / 12 * 9);
+    }
+
+    .col-sm-10 {
+        width: calc(100% / 12 * 10);
+    }
+
+    .col-sm-11 {
+        width: calc(100% / 12 * 11);
+    }
+
+    .col-sm-12 {
+        width: calc(100% / 12 * 12);
     }
 }
