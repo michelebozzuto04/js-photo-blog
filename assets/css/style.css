@@ -115,9 +115,10 @@ img {
         margin-top: -25px;
     }
 
-    .card-image {
+    #card-image {
+
         img {
-            height: 250px;
+            height: 280px;
             object-fit: cover;
         }
     }
