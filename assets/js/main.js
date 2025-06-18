@@ -2,6 +2,8 @@ const rowEl = document.querySelector('.row')
 const modalEl = document.getElementById("modal");
 const modalImageEl = document.querySelector(".modal-image");
 const closeModalEl = document.getElementById("closeIcon");
+const modalBackwardEl = document.querySelector(".backward i");
+const modalForwardEl = document.querySelector(".forward i");
 const posts = [];
 
 function openModal() {
@@ -42,12 +44,32 @@ fetch('https://lanciweb.github.io/demo/api/pictures/')
                 closeModalEl.addEventListener('click', () => {
                     closeModal()
                 })
-                const currentIndex = data.indexOf(element);
+
+                let currentIndex = data.indexOf(element);
+
                 modalImageEl.innerHTML = `<img id="card-image" src='${data[currentIndex].url}' alt=""></img><div><span>${data[currentIndex].date}</span><span>${data[currentIndex].title}</span></div>`;
-                /* const modalImgTextEl = document.createElement('div');
-                modalImgTextEl.classList.add('modal-img-text');
-                modalImgTextEl.innerHTML = ``;
-                modalImageEl.appendChild(modalImgTextEl); */
+
+                modalForwardEl.addEventListener('click', () => {
+
+                    if (currentIndex == data.length - 1) {
+                        currentIndex = 0;
+                    } else if (currentIndex < data.length) {
+                        currentIndex++;
+                    }
+
+                    modalImageEl.innerHTML = `<img id="card-image" src='${data[currentIndex].url}' alt=""></img><div><span>${data[currentIndex].date}</span><span>${data[currentIndex].title}</span></div>`;
+                })
+
+                modalBackwardEl.addEventListener('click', () => {
+
+                    if (currentIndex == 0) {
+                        currentIndex = data.length - 1;
+                    } else if (currentIndex > 0) {
+                        currentIndex--;
+                    }
+
+                    modalImageEl.innerHTML = `<img id="card-image" src='${data[currentIndex].url}' alt=""></img><div><span>${data[currentIndex].date}</span><span>${data[currentIndex].title}</span></div>`;
+                })
             })
         });
     })
