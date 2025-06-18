@@ -4,7 +4,6 @@ const modalImageEl = document.querySelector(".modal-image");
 const closeModalEl = document.getElementById("closeIcon");
 const modalBackwardEl = document.querySelector(".backward i");
 const modalForwardEl = document.querySelector(".forward i");
-const posts = [];
 
 function openModal() {
     modalEl.classList.remove('d-none');
@@ -39,8 +38,12 @@ fetch('https://lanciweb.github.io/demo/api/pictures/')
             colEl.appendChild(cardEl);
             rowEl.appendChild(colEl);
 
+
+            // Event listener to open modal on card click
             cardEl.addEventListener('click', () => {
+
                 openModal()
+
                 closeModalEl.addEventListener('click', () => {
                     closeModal()
                 })
@@ -49,8 +52,8 @@ fetch('https://lanciweb.github.io/demo/api/pictures/')
 
                 modalImageEl.innerHTML = `<img id="card-image" src='${data[currentIndex].url}' alt=""></img><div><span>${data[currentIndex].date}</span><span>${data[currentIndex].title}</span></div>`;
 
+                // Listener for next image
                 modalForwardEl.addEventListener('click', () => {
-
                     if (currentIndex == data.length - 1) {
                         currentIndex = 0;
                     } else if (currentIndex < data.length) {
@@ -60,8 +63,8 @@ fetch('https://lanciweb.github.io/demo/api/pictures/')
                     modalImageEl.innerHTML = `<img id="card-image" src='${data[currentIndex].url}' alt=""></img><div><span>${data[currentIndex].date}</span><span>${data[currentIndex].title}</span></div>`;
                 })
 
+                // Listener for previous image
                 modalBackwardEl.addEventListener('click', () => {
-
                     if (currentIndex == 0) {
                         currentIndex = data.length - 1;
                     } else if (currentIndex > 0) {
@@ -69,6 +72,12 @@ fetch('https://lanciweb.github.io/demo/api/pictures/')
                     }
 
                     modalImageEl.innerHTML = `<img id="card-image" src='${data[currentIndex].url}' alt=""></img><div><span>${data[currentIndex].date}</span><span>${data[currentIndex].title}</span></div>`;
+                })
+
+                // Listener to detect click outside of modal
+                modalEl.addEventListener('click', (event) => {
+                    if (event.target.closest([".modal-image", ".backward", ".forward", "#closeIcon"])) return
+                    closeModal()
                 })
             })
         });
