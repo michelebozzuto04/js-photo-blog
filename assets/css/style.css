@@ -156,6 +156,18 @@ img {
         height: 50%;
         background-color: white;
     }
+
+    #closeIcon {
+        position: absolute;
+        top: 4rem;
+        right: 4rem;
+        font-size: 2rem;
+        color: white;
+    }
+
+    #closeIcon:hover {
+        cursor: pointer;
+    }
 }
 
 /* Responsive Rules */

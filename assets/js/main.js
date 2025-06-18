@@ -1,5 +1,6 @@
 const rowEl = document.querySelector('.row')
 const modalEl = document.getElementById("modal");
+const closeModalEl = document.getElementById("closeIcon")
 const posts = [];
 
 function openModal() {
@@ -37,7 +38,7 @@ fetch('https://lanciweb.github.io/demo/api/pictures/')
 
             cardEl.addEventListener('click', () => {
                 openModal()
-                modalEl.addEventListener('click', () => {
+                closeModalEl.addEventListener('click', () => {
                     closeModal()
                 })
             })
