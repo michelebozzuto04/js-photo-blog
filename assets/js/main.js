@@ -32,7 +32,7 @@ fetch('https://lanciweb.github.io/demo/api/pictures/')
             cardDescriptionEl.classList.add('card-description');
             cardPinEl.innerHTML = '<img src="./assets/img/pin.svg" alt=""></img>';
             cardImageEl.innerHTML = `<img id="card-image" src='${element.url}' alt="">`;
-            cardDescriptionEl.innerHTML = `<span id="card-description">${element.title}</span>`;
+            cardDescriptionEl.innerHTML = `<span id="card-description">${element.title}</span><span id="card-description">${element.date}</span>`;
             cardEl.append(cardPinEl, cardImageEl, cardDescriptionEl);
             colEl.appendChild(cardEl);
             rowEl.appendChild(colEl);

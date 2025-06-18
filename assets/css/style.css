@@ -109,11 +109,14 @@ img {
 
 /* Card */
 .card {
+    position: relative;
     width: 100%;
     padding: 15px;
     background-color: white;
     flex-direction: column;
     align-items: center;
+    z-index: 100;
+    transition: scale 0.5s, transform 0.5s;
 
     .card-pin {
         scale: 0.8;
@@ -140,6 +143,9 @@ img {
 
 .card:hover {
     cursor: pointer;
+    z-index: 500;
+    transform: rotate(10deg) scale(107%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .modal {
@@ -178,7 +184,7 @@ img {
         #closeIcon {
             top: 1.5rem;
             right: 2rem;
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: white;
         }
 
