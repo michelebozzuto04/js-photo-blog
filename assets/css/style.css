@@ -80,10 +80,7 @@
 body {
     background-image: url('../img/cork.png');
     background-repeat: repeat;
-
-    main {
-        z-index: 100;
-    }
+    overflow-x: hidden;
 }
 
 img {
