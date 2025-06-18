@@ -52,25 +52,31 @@ fetch('https://lanciweb.github.io/demo/api/pictures/')
 
                 modalImageEl.innerHTML = `<img id="card-image" src='${data[currentIndex].url}' alt=""></img><div><span>${data[currentIndex].date}</span><span>${data[currentIndex].title}</span></div>`;
 
-                // Listener for next image
-                modalForwardEl.addEventListener('click', () => {
+                function nextImage() {
                     if (currentIndex == data.length - 1) {
                         currentIndex = 0;
                     } else if (currentIndex < data.length) {
                         currentIndex++;
                     }
+                }
 
-                    modalImageEl.innerHTML = `<img id="card-image" src='${data[currentIndex].url}' alt=""></img><div><span>${data[currentIndex].date}</span><span>${data[currentIndex].title}</span></div>`;
-                })
-
-                // Listener for previous image
-                modalBackwardEl.addEventListener('click', () => {
+                function previousImage() {
                     if (currentIndex == 0) {
                         currentIndex = data.length - 1;
                     } else if (currentIndex > 0) {
                         currentIndex--;
                     }
+                }
 
+                // Listener for next image
+                modalForwardEl.addEventListener('click', () => {
+                    nextImage();
+                    modalImageEl.innerHTML = `<img id="card-image" src='${data[currentIndex].url}' alt=""></img><div><span>${data[currentIndex].date}</span><span>${data[currentIndex].title}</span></div>`;
+                })
+
+                // Listener for previous image
+                modalBackwardEl.addEventListener('click', () => {
+                    previousImage();
                     modalImageEl.innerHTML = `<img id="card-image" src='${data[currentIndex].url}' alt=""></img><div><span>${data[currentIndex].date}</span><span>${data[currentIndex].title}</span></div>`;
                 })
 
@@ -79,6 +85,13 @@ fetch('https://lanciweb.github.io/demo/api/pictures/')
                     if (event.target.closest([".modal-image", ".backward", ".forward", "#closeIcon"])) return
                     closeModal()
                 })
+
+                // Close modal on escape key press
+                document.onkeydown = (event) => {
+                    if (event.keyCode == 27) {
+                        closeModal();
+                    }
+                };
             })
         });
     })
