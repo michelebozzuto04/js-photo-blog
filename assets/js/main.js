@@ -44,40 +44,45 @@ fetch('https://lanciweb.github.io/demo/api/pictures/')
 
                 openModal()
 
+                // Call closeModal function on x icon click
                 closeModalEl.addEventListener('click', () => {
                     closeModal()
                 })
 
+                // Detect image index of the card clicked
                 let currentIndex = data.indexOf(element);
 
+                // Render image url of current index in the data array
                 modalImageEl.innerHTML = `<img id="card-image" src='${data[currentIndex].url}' alt=""></img><div><span>${data[currentIndex].date}</span><span>${data[currentIndex].title}</span></div>`;
 
+                // Function to increase current image index and render new image
                 function nextImage() {
                     if (currentIndex == data.length - 1) {
                         currentIndex = 0;
                     } else if (currentIndex < data.length) {
                         currentIndex++;
                     }
+                    modalImageEl.innerHTML = `<img id="card-image" src='${data[currentIndex].url}' alt=""></img><div><span>${data[currentIndex].date}</span><span>${data[currentIndex].title}</span></div>`;
                 }
 
+                // Function to decrease current image index and render new image
                 function previousImage() {
                     if (currentIndex == 0) {
                         currentIndex = data.length - 1;
                     } else if (currentIndex > 0) {
                         currentIndex--;
                     }
+                    modalImageEl.innerHTML = `<img id="card-image" src='${data[currentIndex].url}' alt=""></img><div><span>${data[currentIndex].date}</span><span>${data[currentIndex].title}</span></div>`;
                 }
 
-                // Listener for next image
+                // Listener for next image on icon forward click
                 modalForwardEl.addEventListener('click', () => {
                     nextImage();
-                    modalImageEl.innerHTML = `<img id="card-image" src='${data[currentIndex].url}' alt=""></img><div><span>${data[currentIndex].date}</span><span>${data[currentIndex].title}</span></div>`;
                 })
 
-                // Listener for previous image
+                // Listener for previous image on icon backward click
                 modalBackwardEl.addEventListener('click', () => {
                     previousImage();
-                    modalImageEl.innerHTML = `<img id="card-image" src='${data[currentIndex].url}' alt=""></img><div><span>${data[currentIndex].date}</span><span>${data[currentIndex].title}</span></div>`;
                 })
 
                 // Listener to detect click outside of modal
