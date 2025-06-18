@@ -180,12 +180,25 @@ img {
                 width: auto;
                 height: 500px;
 
+
+
                 @media screen and (max-width: 992px) {
                     height: 400px;
                 }
 
                 @media screen and (max-width: 576px) {
                     height: 300px;
+                }
+            }
+
+            div {
+                position: absolute;
+                padding: 1rem 1rem;
+                font-family: "Edu TAS Beginner", cursive;
+                color: white;
+
+                span:nth-of-type(2) {
+                    font-size: 1.5rem;
                 }
             }
         }

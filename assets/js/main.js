@@ -43,7 +43,11 @@ fetch('https://lanciweb.github.io/demo/api/pictures/')
                     closeModal()
                 })
                 const currentIndex = data.indexOf(element);
-                modalImageEl.innerHTML = `<img id="card-image" src='${data[currentIndex].url}' alt=""></img>`;
+                modalImageEl.innerHTML = `<img id="card-image" src='${data[currentIndex].url}' alt=""></img><div><span>${data[currentIndex].date}</span><span>${data[currentIndex].title}</span></div>`;
+                /* const modalImgTextEl = document.createElement('div');
+                modalImgTextEl.classList.add('modal-img-text');
+                modalImgTextEl.innerHTML = ``;
+                modalImageEl.appendChild(modalImgTextEl); */
             })
         });
     })
