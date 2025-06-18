@@ -91,10 +91,21 @@ fetch('https://lanciweb.github.io/demo/api/pictures/')
                     closeModal()
                 })
 
-                // Close modal on escape key press
+                // Calls functions on key press event
                 document.onkeydown = (event) => {
+                    // if keycode is 27 (Escape key) then closeModal is called
                     if (event.keyCode == 27) {
                         closeModal();
+                    }
+
+                    // if keycode is 39 (Right arrow key) then nextImage is called
+                    if (event.keyCode == 39) {
+                        nextImage();
+                    }
+
+                    // if keycode is 37 (Left arrow key) then previousImage is called
+                    if (event.keyCode == 37) {
+                        previousImage();
                     }
                 };
             })
