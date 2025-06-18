@@ -1,6 +1,7 @@
 const rowEl = document.querySelector('.row')
 const modalEl = document.getElementById("modal");
-const closeModalEl = document.getElementById("closeIcon")
+const modalImageEl = document.querySelector(".modal-image");
+const closeModalEl = document.getElementById("closeIcon");
 const posts = [];
 
 function openModal() {
@@ -41,6 +42,8 @@ fetch('https://lanciweb.github.io/demo/api/pictures/')
                 closeModalEl.addEventListener('click', () => {
                     closeModal()
                 })
+                const currentIndex = data.indexOf(element);
+                modalImageEl.innerHTML = `<img id="card-image" src='${data[currentIndex].url}' alt=""></img>`;
             })
         });
     })
