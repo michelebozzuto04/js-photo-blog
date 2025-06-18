@@ -5,6 +5,7 @@ const closeModalEl = document.getElementById("closeIcon");
 const modalBackwardEl = document.querySelector(".backward i");
 const modalForwardEl = document.querySelector(".forward i");
 
+// Functions to toggle display flex and display none classes
 function openModal() {
     modalEl.classList.remove('d-none');
     modalEl.classList.add('d-flex');
@@ -15,6 +16,7 @@ function closeModal() {
     modalEl.classList.add('d-none');
 }
 
+// AJAX call for the images, dates and description
 fetch('https://lanciweb.github.io/demo/api/pictures/')
     .then(response => response.json())
     .then(data => {
