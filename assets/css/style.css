@@ -180,13 +180,15 @@ img {
                 width: auto;
                 height: 500px;
 
-
-
                 @media screen and (max-width: 992px) {
                     height: 400px;
                 }
 
                 @media screen and (max-width: 576px) {
+                    height: 350px;
+                }
+
+                @media screen and (max-width: 425px) {
                     height: 300px;
                 }
             }
